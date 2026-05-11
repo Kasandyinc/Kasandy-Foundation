@@ -84,16 +84,19 @@ export default function GirlsWomenPage() {
           <div>
             <div className="grid grid-cols-2 gap-4 mb-6">
               {[
-                { value: '[X]', label: 'Bursaries awarded', color: 'text-kf-red' },
-                { value: '[X]', label: 'Years of education funded', color: 'text-brown' },
+                { value: '6',  label: 'Bursaries awarded (Canada)', badge: '2026–2028 Target', color: 'text-kf-red' },
+                { value: '20', label: 'Girls supported in Kenya (One Girl Can)', badge: '2026–2028 Target', color: 'text-brown' },
               ].map(s => (
                 <div key={s.label} className="bg-white rounded-xl border border-kf-border shadow-kf p-6 text-center">
                   <div className={`font-montserrat font-black text-4xl leading-none ${s.color} mb-2`}>
                     {s.value}
                   </div>
-                  <div className="font-montserrat text-[10px] font-bold tracking-[2px] uppercase text-text-muted">
+                  <div className="font-montserrat text-[10px] font-bold tracking-[2px] uppercase text-text-muted mb-2">
                     {s.label}
                   </div>
+                  <span className="font-montserrat text-[8px] font-bold tracking-wide uppercase px-2 py-0.5 rounded-full bg-red-pale text-kf-red">
+                    {s.badge}
+                  </span>
                 </div>
               ))}
             </div>

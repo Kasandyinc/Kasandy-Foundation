@@ -8,13 +8,13 @@ export const metadata: Metadata = {
 }
 
 const stats = [
-  { value: '[X]', label: 'Tonnes diverted\nfrom landfill', sub: 'Goal: 100+ tonnes/year', color: 'text-brown' },
-  { value: '[X]', label: 'Sustainable jobs\ncreated', sub: 'Goal: 50 jobs in 3 years', color: 'text-kf-red' },
-  { value: '[X]', label: 'Partner\norganizations', sub: '', color: 'text-kf-green' },
-  { value: '[X]', label: 'Cities and municipalities\nengaged', sub: '', color: 'text-brown-soft' },
-  { value: '[X]', label: 'Girls and women\nsupported (Canada + Kenya)', sub: '', color: 'text-kf-green' },
-  { value: '[X]', label: 'Families funded\nfor adoption', sub: '', color: 'text-kf-red' },
-  { value: '[X]', label: 'Children placed\nin loving homes', sub: '', color: 'text-brown' },
+  { value: '50',  label: 'Tonnes diverted\nfrom landfill',             sub: 'Target: 50 tonnes by 2028',  badge: 'TARGET',  color: 'text-brown' },
+  { value: '12',  label: 'Sustainable jobs\ncreated',                  sub: 'Target: 12 jobs by 2028',    badge: 'TARGET',  color: 'text-kf-red' },
+  { value: '8',   label: 'Partner\norganizations',                     sub: '',                            badge: 'CURRENT', color: 'text-kf-green' },
+  { value: '3',   label: 'Cities and municipalities\nengaged',         sub: 'Vancouver · Victoria · CRD', badge: 'CURRENT', color: 'text-brown-soft' },
+  { value: '26',  label: 'Girls and women\nsupported (Canada + Kenya)', sub: '6 Canada + 20 Kenya',        badge: 'TARGET',  color: 'text-kf-green' },
+  { value: '3',   label: 'Families funded\nfor adoption',              sub: '',                            badge: 'TARGET',  color: 'text-kf-red' },
+  { value: '3',   label: 'Children placed\nin loving homes',           sub: '',                            badge: 'TARGET',  color: 'text-brown' },
 ]
 
 const governance = [
@@ -65,8 +65,13 @@ export default function ImpactPage() {
                 </div>
                 <div className="text-[11px] text-text-body leading-snug whitespace-pre-line mb-1">{s.label}</div>
                 {s.sub && (
-                  <div className="font-montserrat text-[10px] font-semibold text-text-muted">{s.sub}</div>
+                  <div className="font-montserrat text-[10px] text-text-muted mb-1">{s.sub}</div>
                 )}
+                <span className={`font-montserrat text-[8px] font-bold tracking-[1.5px] uppercase px-2 py-0.5 rounded-full ${
+                  s.badge === 'TARGET' ? 'bg-red-pale text-kf-red' : 'bg-green-pale text-kf-green'
+                }`}>
+                  {s.badge === 'TARGET' ? '2026–2028 Target' : 'Current'}
+                </span>
               </div>
             ))}
           </div>

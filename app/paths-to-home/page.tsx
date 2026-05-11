@@ -8,9 +8,9 @@ export const metadata: Metadata = {
 }
 
 const fundStats = [
-  { value: '[X]', label: 'Families funded', color: 'text-kf-red' },
-  { value: '[X]', label: 'Children placed in loving homes', color: 'text-brown' },
-  { value: '$[X]', label: 'Raised for the adoption fund', color: 'text-kf-green' },
+  { value: '3',    label: 'Families funded',                    badge: '2026–2028 Target', color: 'text-kf-red' },
+  { value: '3',    label: 'Children placed in loving homes',    badge: '2026–2028 Target', color: 'text-brown' },
+  { value: '100%', label: 'Of donations go directly to families', badge: 'Policy commitment', color: 'text-kf-green' },
 ]
 
 const howItWorks = [
@@ -70,6 +70,9 @@ export default function PathsToHomePage() {
                 <div className="font-montserrat font-black text-3xl text-white">{s.value}</div>
                 <div className="font-montserrat text-[10px] font-bold tracking-wide text-white/65 uppercase mt-0.5 leading-snug">
                   {s.label}
+                </div>
+                <div className="font-montserrat text-[8px] font-bold tracking-wide text-white/40 uppercase mt-1">
+                  {s.badge}
                 </div>
               </div>
             ))}

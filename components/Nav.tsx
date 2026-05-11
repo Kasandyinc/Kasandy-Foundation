@@ -6,6 +6,7 @@ import { useState } from 'react'
 import Logo from './Logo'
 
 const links = [
+  { label: 'Home', href: '/' },
   {
     label: 'KCEI',
     href: '/kcei',

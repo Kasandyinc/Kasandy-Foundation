@@ -7,7 +7,7 @@ interface LogoProps {
   size?: 'sm' | 'md' | 'lg'
 }
 
-const heights: Record<string, number> = { sm: 36, md: 44, lg: 56 }
+const heights: Record<string, number> = { sm: 52, md: 64, lg: 80 }
 
 export default function Logo({ variant = 'dark', size = 'md' }: LogoProps) {
   const h = heights[size]
