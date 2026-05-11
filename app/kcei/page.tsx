@@ -37,9 +37,9 @@ const workers = [
 ]
 
 const stats = [
-  { value: '[X]', label: 'Tonnes diverted', color: 'text-kf-green' },
-  { value: '[X]', label: 'Jobs created', color: 'text-brown' },
-  { value: '[X]', label: 'Partners', color: 'text-kf-red' },
+  { value: '50', label: 'Tonnes diverted', color: 'text-kf-green' },
+  { value: '12', label: 'Jobs created', color: 'text-brown' },
+  { value: '8',  label: 'Partners', color: 'text-kf-red' },
 ]
 
 export default function KCEIPage() {
@@ -62,16 +62,23 @@ export default function KCEIPage() {
           <h1 className="font-montserrat font-black text-4xl md:text-5xl leading-[1.1] mb-5">
             We don&rsquo;t just recycle materials.
           </h1>
-          <div className="flex gap-8 mb-7">
-            {stats.map(s => (
+          <div className="flex gap-8 mb-3">
+            {stats.map((s, i) => (
               <div key={s.label}>
                 <div className="font-montserrat font-black text-3xl text-white">{s.value}</div>
                 <div className="font-montserrat text-[10px] font-bold tracking-wide text-white/70 uppercase mt-0.5">
                   {s.label}
                 </div>
+                <div className="font-montserrat text-[8px] text-kf-red font-bold uppercase tracking-wide mt-0.5">
+                  {i < 2 ? '2026–2028 Target' : 'Current'}
+                </div>
               </div>
             ))}
           </div>
+          <p className="text-[11px] text-white/45 leading-relaxed mb-7 max-w-md">
+            KCEI became fully operational July 2024. Tonnes and jobs figures are 2026–2028 programme targets.
+            Verified data published as milestones are reached.
+          </p>
           <div className="flex flex-wrap gap-3">
             <Link
               href="#partner"

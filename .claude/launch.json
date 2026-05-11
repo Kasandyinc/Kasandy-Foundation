@@ -4,8 +4,8 @@
     {
       "name": "kasandy-foundation",
       "runtimeExecutable": "bash",
-      "runtimeArgs": ["-c", "cd /Users/jackeekasandy/kasandy-foundation && npm run dev"],
-      "port": 3000
+      "runtimeArgs": ["-c", "cd /Users/jackeekasandy/kasandy-foundation && npm run dev -- --port 3010"],
+      "port": 3010
     }
   ]
 }

@@ -97,10 +97,10 @@ const communities = [
 ]
 
 const targets = [
-  { value: '[X]', label: 'Tonnes diverted' },
-  { value: '[X]', label: 'Jobs created' },
-  { value: '[X]', label: 'Municipal partners' },
-  { value: '[X]', label: 'Product partners' },
+  { value: '50',  label: 'Tonnes diverted' },
+  { value: '12',  label: 'Sustainable jobs' },
+  { value: '3',   label: 'Families funded' },
+  { value: '26',  label: 'Girls & women' },
 ]
 
 const funders = [
@@ -238,17 +238,17 @@ export default function HomePage() {
 
         {/* 2026 targets */}
         <div className="bg-kf-text px-8 md:px-12 py-14">
-          <p className="font-montserrat text-[9px] tracking-[2px] text-kf-red font-bold uppercase mb-2">KCEI 2026 PROGRAMME TARGETS</p>
+          <p className="font-montserrat text-[9px] tracking-[2px] text-kf-red font-bold uppercase mb-2">2026–2028 PROGRAMME TARGETS</p>
           <h2 className="font-montserrat font-extrabold text-[22px] text-white mb-3">Where we&apos;re heading.</h2>
           <p className="text-[12px] text-white/55 leading-[1.6] mb-6">
-            KCEI became operational July 2024. These are our first-year programme targets. We will publish verified impact data as milestones are reached.
+            KCEI became fully operational in July 2024. These are our programme targets for 2026–2028 — what we are working toward. We will publish verified data as milestones are reached.
           </p>
           <div className="grid grid-cols-2 gap-3 mb-6">
             {targets.map(t => (
               <div key={t.label} className="bg-white/7 border border-white/10 rounded-lg p-4 text-center border-t-2 border-t-brown-soft">
                 <div className="font-montserrat text-[28px] font-black text-brown-soft">{t.value}</div>
                 <div className="font-montserrat text-[9px] text-white/55 uppercase tracking-wide mt-1">{t.label}</div>
-                <div className="font-montserrat text-[8px] text-kf-red font-bold uppercase tracking-wide mt-1">2026 Target</div>
+                <div className="font-montserrat text-[8px] text-kf-red font-bold uppercase tracking-wide mt-1">2026–2028 Target</div>
               </div>
             ))}
           </div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                 Born and based in Vancouver with deep roots in Kenya, Jackee Kasandy built the Kasandy Foundation on the belief that nothing — and no one — should be wasted.
               </p>
               <p className="text-[14px] text-text-body leading-relaxed mb-6">
-                Together with Deress Asghedom, Nadine Umutoni, and Raphael Malachi, the team is turning that belief into action.
+                Together with Deress Asghedom, Nadine Umutoni, and Raphael Machalani, the team is turning that belief into action.
               </p>
               <Link href="/team" className="font-montserrat text-[12px] font-bold text-kf-red hover:underline">Meet the team &rarr;</Link>
             </div>
@@ -344,7 +344,7 @@ export default function HomePage() {
                 { name: 'Jackee Kasandy',    role: 'Founder & Executive Director', accent: 'border-t-kf-red' },
                 { name: 'Deress Asghedom',   role: 'Operations & Technical Lead',   accent: 'border-t-brown' },
                 { name: 'Nadine Umutoni',    role: 'Team Member',                   accent: 'border-t-kf-green' },
-                { name: 'Raphael Malachi',   role: 'Project Coordinator',            accent: 'border-t-brown-soft' },
+                { name: 'Raphael Machalani',   role: 'Project Coordinator',            accent: 'border-t-brown-soft' },
               ].map(m => (
                 <div key={m.name} className={`bg-white rounded-lg p-4 border-t-4 ${m.accent} shadow-kf`}>
                   <div className="font-montserrat text-[13px] font-bold text-kf-text mb-1">{m.name}</div>
@@ -357,14 +357,14 @@ export default function HomePage() {
           <div className="rounded-xl overflow-hidden shadow-kf-lg">
             <Image
               src="/photos/team.jpg"
-              alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
+              alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Machalani"
               width={2400}
               height={1360}
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
           <p className="font-montserrat text-[10px] text-text-muted text-center mt-2 tracking-wide">
-            Left to right: Deress Asghedom · Jackee Kasandy · Nadine Umutoni · Raphael Malachi
+            Left to right: Deress Asghedom · Jackee Kasandy · Nadine Umutoni · Raphael Machalani
           </p>
         </div>
       </section>
