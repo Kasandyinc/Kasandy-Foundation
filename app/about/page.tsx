@@ -99,6 +99,7 @@ export default function AboutPage() {
           style={{
             backgroundImage:
               'url(/photos/team.jpg), linear-gradient(135deg, #50260E 0%, #C4956A 100%)',
+            backgroundPosition: 'center bottom',
           }}
         />
       </section>

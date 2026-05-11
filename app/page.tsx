@@ -343,7 +343,7 @@ export default function HomePage() {
               style={{
                 backgroundImage: 'url(/photos/team.jpg), linear-gradient(135deg, #50260E 0%, #C4956A 100%)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center 65%',
+                backgroundPosition: 'center bottom',
                 minHeight: '340px',
               }}
               role="img"

@@ -13,7 +13,7 @@ export default function Logo({ variant = 'dark', size = 'md' }: LogoProps) {
   const h = heights[size]
   return (
     <Image
-      src="/KF_Logo.png"
+      src={variant === 'light' ? '/KF_Logo_transparent.png' : '/KF_Logo.png'}
       alt="The Kasandy Foundation"
       height={h}
       width={h * 1.05}
