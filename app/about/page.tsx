@@ -95,13 +95,13 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden min-h-[380px] lg:min-h-0">
           <Image
-            src="/photos/team_cropped.jpg"
-            alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
-            width={1200}
-            height={350}
-            style={{ width: '100%', height: 'auto', display: 'block' }}
+            src="/photos/collaboration.jpg"
+            alt="Jackee Kasandy, Founder of the Kasandy Foundation"
+            width={900}
+            height={600}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
           />
         </div>
       </section>

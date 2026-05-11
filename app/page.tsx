@@ -324,34 +324,48 @@ export default function HomePage() {
 
       {/* ── SECTION 6: TEAM TEASER ── */}
       <section className="bg-brown-pale py-16 px-6 md:px-10">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="kicker mb-2">THE PEOPLE BEHIND THE WORK</p>
-            <h2 className="font-montserrat font-extrabold text-[28px] text-kf-text mb-5 leading-snug">
-              Founded by Jackee Kasandy.<br />Built by a dedicated team.
-            </h2>
-            <p className="text-[14px] text-text-body leading-relaxed mb-3">
-              Born and based in Vancouver with deep roots in Kenya, Jackee Kasandy built the Kasandy Foundation on the belief that nothing — and no one — should be wasted.
-            </p>
-            <p className="text-[14px] text-text-body leading-relaxed mb-6">
-              Together with Deress Asghedom, Nadine Umutoni, and Raphael Malachi, the team is turning that belief into action.
-            </p>
-            <Link href="/team" className="font-montserrat text-[12px] font-bold text-kf-red hover:underline">Meet the team &rarr;</Link>
-          </div>
-          <div>
-            <div className="rounded-xl overflow-hidden shadow-kf-lg">
-              <Image
-                src="/photos/team_cropped.jpg"
-                alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
-                width={1200}
-                height={350}
-                style={{ width: '100%', height: 'auto', display: 'block' }}
-              />
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-10">
+            <div>
+              <p className="kicker mb-2">THE PEOPLE BEHIND THE WORK</p>
+              <h2 className="font-montserrat font-extrabold text-[28px] text-kf-text mb-5 leading-snug">
+                Founded by Jackee Kasandy.<br />Built by a dedicated team.
+              </h2>
+              <p className="text-[14px] text-text-body leading-relaxed mb-3">
+                Born and based in Vancouver with deep roots in Kenya, Jackee Kasandy built the Kasandy Foundation on the belief that nothing — and no one — should be wasted.
+              </p>
+              <p className="text-[14px] text-text-body leading-relaxed mb-6">
+                Together with Deress Asghedom, Nadine Umutoni, and Raphael Malachi, the team is turning that belief into action.
+              </p>
+              <Link href="/team" className="font-montserrat text-[12px] font-bold text-kf-red hover:underline">Meet the team &rarr;</Link>
             </div>
-            <p className="font-montserrat text-[10px] text-text-muted text-center mt-2 tracking-wide">
-              Left to right: Deress Asghedom · Jackee Kasandy · Nadine Umutoni · Raphael Malachi
-            </p>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { name: 'Jackee Kasandy',    role: 'Founder & Executive Director', accent: 'border-t-kf-red' },
+                { name: 'Deress Asghedom',   role: 'Operations & Technical Lead',   accent: 'border-t-brown' },
+                { name: 'Nadine Umutoni',    role: 'Team Member',                   accent: 'border-t-kf-green' },
+                { name: 'Raphael Malachi',   role: 'Project Coordinator',            accent: 'border-t-brown-soft' },
+              ].map(m => (
+                <div key={m.name} className={`bg-white rounded-lg p-4 border-t-4 ${m.accent} shadow-kf`}>
+                  <div className="font-montserrat text-[13px] font-bold text-kf-text mb-1">{m.name}</div>
+                  <div className="font-montserrat text-[10px] text-text-muted uppercase tracking-wide leading-snug">{m.role}</div>
+                </div>
+              ))}
+            </div>
           </div>
+          {/* Full-width team photo — displayed at natural size */}
+          <div className="rounded-xl overflow-hidden shadow-kf-lg">
+            <Image
+              src="/photos/team_cropped.jpg"
+              alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
+              width={1200}
+              height={350}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+          <p className="font-montserrat text-[10px] text-text-muted text-center mt-2 tracking-wide">
+            Left to right: Deress Asghedom · Jackee Kasandy · Nadine Umutoni · Raphael Malachi
+          </p>
         </div>
       </section>
 
