@@ -82,7 +82,7 @@ const esg = [
   },
   {
     label: 'GOVERNANCE',
-    body: 'Formal MOU with ECUAD. Government-endorsed. BC-registered charitable foundation. Full grant transparency.',
+    body: 'Formal MOU with ECUAD. Government-endorsed. BC-registered nonprofit organization. Full grant transparency.',
     accent: 'border-t-kf-red',
     kicker: 'text-kf-red',
   },

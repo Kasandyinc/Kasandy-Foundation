@@ -93,7 +93,7 @@ export default function Nav() {
         </div>
 
         <div className="flex items-center gap-3">
-          <span className="hidden md:block font-montserrat text-[11px] text-text-muted">EN · FR</span>
+          <span className="hidden md:block font-montserrat text-[11px] text-text-muted">EN</span>
           <Link
             href="/donate"
             className="bg-kf-red text-white font-montserrat text-[11px] font-bold tracking-wide px-5 py-2 rounded-sm hover:bg-[#a82b22] transition-colors"

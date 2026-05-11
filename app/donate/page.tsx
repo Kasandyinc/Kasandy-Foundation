@@ -274,7 +274,7 @@ export default function DonatePage() {
                 {loading ? 'Processing…' : `Donate $${finalAmount > 0 ? finalAmount.toFixed(2) : '—'}`}
               </button>
               <p className="text-[10px] text-text-muted mt-3 text-center leading-snug">
-                Secure payment via Square. You will receive a tax receipt by email. The Kasandy Foundation is a registered BC charitable organization.
+                Secure payment via Square. You will receive a tax receipt by email. The Kasandy Foundation is a registered BC nonprofit organization.
               </p>
             </div>
           </div>

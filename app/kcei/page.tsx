@@ -114,7 +114,7 @@ export default function KCEIPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <div>
               <p className="text-[15px] text-text-body leading-relaxed mb-4">
-                Vancouver discards 500 million kilograms of textiles annually. The overwhelming majority goes
+                Canada discards an estimated 500 million kilograms of textiles annually. The overwhelming majority goes
                 straight to landfill — materials that could become building products, panels, and surfaces
                 with real commercial value.
               </p>

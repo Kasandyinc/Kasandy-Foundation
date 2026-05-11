@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'About — The Kasandy Foundation',
   description:
-    'A BC-registered charitable foundation built on one conviction: sustainability and social justice are the same bet. Learn about the Kasandy Foundation, our three programs, and the Canada + Kenya principle.',
+    'A BC-registered nonprofit organization built on one conviction: sustainability and social justice are the same bet. Learn about the Kasandy Foundation, our three programs, and the Canada + Kenya principle.',
 }
 
 const pillars = [
@@ -43,8 +43,8 @@ const pillars = [
 const credentials = [
   {
     title: 'BC Registration',
-    sub: 'Charitable Organization',
-    body: 'BC Incorporation No.: S0075186 · Business No.: 786954701. Registered with the Canada Revenue Agency as a charitable organization.',
+    sub: 'BC Nonprofit Organization',
+    body: 'BC Incorporation No.: S0075186 · Business No.: 786954701. A BC-registered nonprofit organization. Charitable status application in progress with the Canada Revenue Agency.',
     accent: 'border-t-brown',
   },
   {
@@ -72,7 +72,7 @@ export default function AboutPage() {
             We believe that nothing — and no one — should be wasted.
           </h1>
           <p className="text-[15px] text-text-body leading-relaxed max-w-lg mb-6">
-            A BC-registered charitable foundation built on one conviction: sustainability and social justice
+            A BC-registered nonprofit organization built on one conviction: sustainability and social justice
             are the same bet. Everything we do in Canada, we also do in Kenya.
           </p>
           <p className="font-montserrat text-[11px] font-semibold text-text-muted mb-8">

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     template: '%s | The Kasandy Foundation',
   },
   description:
-    "A BC-registered charitable foundation transforming textile waste into purposeful employment, funding girls' education in Canada and Kenya, and removing financial barriers to adoption.",
+    "A BC-registered nonprofit organization transforming textile waste into purposeful employment, funding girls' education in Canada and Kenya, and removing financial barriers to adoption.",
   keywords: [
     'Kasandy Foundation',
     'circular economy Vancouver',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     'One Girl Can Kenya',
     'KCEI',
     'Jackee Kasandy',
-    'charitable foundation BC',
+    'nonprofit organization BC',
   ],
   openGraph: {
     type: 'website',

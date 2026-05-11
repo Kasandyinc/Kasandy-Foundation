@@ -21,7 +21,7 @@ export default function Footer() {
         <div className="md:col-span-1">
           <Logo variant="light" size="sm" />
           <p className="mt-4 text-[12px] text-white/60 leading-relaxed max-w-[220px]">
-            A BC-registered charitable foundation. BC Incorporation No.: S0075186 · Business No.: 786954701
+            A BC-registered nonprofit organization. BC Incorporation No.: S0075186 · Business No.: 786954701
           </p>
           <p className="mt-3 text-[11px] text-white/40">Established 2020. Vancouver & Kenya.</p>
         </div>
@@ -62,11 +62,13 @@ export default function Footer() {
       <div className="border-t border-white/10 px-6 md:px-8 py-5">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
           <p className="text-[11px] text-white/40">
-            © {new Date().getFullYear()} The Kasandy Foundation. All rights reserved.
+            © 2024–{new Date().getFullYear()} The Kasandy Foundation. All rights reserved.
           </p>
-          <p className="text-[11px] text-white/40">
-            kasandyfoundation.org
-          </p>
+          <div className="flex items-center gap-3 text-[11px] text-white/40">
+            <Link href="/privacy" className="hover:text-white/70 transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link href="/terms" className="hover:text-white/70 transition-colors">Terms</Link>
+          </div>
         </div>
       </div>
     </footer>

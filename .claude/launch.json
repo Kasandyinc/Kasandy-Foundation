@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "kasandy-foundation",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/jackeekasandy/kasandy-foundation && npm run dev"],
+      "port": 3000
+    }
+  ]
+}
