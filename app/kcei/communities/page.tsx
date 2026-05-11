@@ -135,9 +135,6 @@ export default function KCEICommunitiesPage() {
               funds — all have mandates tied to exactly these groups. KCEI was designed to serve every one of
               them simultaneously.&rdquo;
             </p>
-            <cite className="font-montserrat text-[11px] font-semibold text-text-muted not-italic">
-              — Strategic note
-            </cite>
           </blockquote>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl">
             <div className="bg-white rounded-xl border border-kf-border shadow-kf p-6 border-t-4 border-t-kf-green text-center">

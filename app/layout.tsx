@@ -48,7 +48,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_CA',
-    url: 'https://kasandyfoundation.org',
     siteName: 'The Kasandy Foundation',
   },
   twitter: { card: 'summary_large_image' },
