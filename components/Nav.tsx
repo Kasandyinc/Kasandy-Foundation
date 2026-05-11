@@ -21,6 +21,7 @@ const links = [
   { label: 'About',          href: '/about' },
   { label: 'Impact',         href: '/impact' },
   { label: 'Research',       href: '/research' },
+  { label: 'Media',          href: '/media' },
 ]
 
 export default function Nav() {

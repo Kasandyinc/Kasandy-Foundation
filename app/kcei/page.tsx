@@ -217,10 +217,13 @@ export default function KCEIPage() {
                 Wages that dignify.
               </p>
             </div>
-            <div
-              className="rounded-xl overflow-hidden min-h-[240px] bg-cover bg-center shadow-kf-lg"
-              style={{ backgroundImage: 'url(/photos/communities.jpg), linear-gradient(135deg, #4A7C62 0%, #2E5240 100%)' }}
-            />
+            <div className="rounded-xl overflow-hidden shadow-kf-lg">
+              <img
+                src="/photos/disability_image_1.png"
+                alt="Diverse group of workers including wheelchair users — the KCEI inclusive workforce"
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -157,17 +157,17 @@ export default function KCEICommunitiesPage() {
       </section>
 
       {/* PHOTO SECTION */}
-      <section
-        className="relative min-h-[340px] flex items-end bg-cover bg-center"
-        style={{
-          backgroundImage:
-            'url(/photos/communities.jpg), linear-gradient(135deg, #4A7C62 0%, #2E5240 100%)',
-        }}
-      >
-        <div className="absolute inset-0 bg-brown-deep/50" />
-        <div className="relative z-10 px-6 md:px-10 py-8 max-w-5xl w-full mx-auto">
-          <p className="font-montserrat text-[11px] font-semibold text-white/80 italic">
-            KCEI employees — inclusive employment by design.
+      <section className="bg-sand px-6 md:px-10 py-14 border-t border-kf-border">
+        <div className="max-w-5xl mx-auto">
+          <div className="rounded-xl overflow-hidden shadow-kf-lg">
+            <img
+              src="/photos/disability_image_2.png"
+              alt="Inclusive workforce — KCEI workers including people with disabilities, wheelchair users, and prosthetic limb users"
+              style={{ width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
+          <p className="font-montserrat text-[11px] font-semibold text-text-muted italic mt-4 text-center">
+            KCEI employs people with physical and developmental disabilities — accessible workplace design is a first principle, not an afterthought.
           </p>
         </div>
       </section>
