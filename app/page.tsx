@@ -353,13 +353,13 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          {/* Full-width team photo — displayed at natural size */}
+          {/* Full-width team photo — no cropping, full image at natural dimensions */}
           <div className="rounded-xl overflow-hidden shadow-kf-lg">
             <Image
-              src="/photos/team_cropped.jpg"
+              src="/photos/team.jpg"
               alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
               width={1200}
-              height={350}
+              height={500}
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
