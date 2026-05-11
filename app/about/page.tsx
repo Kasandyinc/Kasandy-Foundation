@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -94,14 +95,15 @@ export default function AboutPage() {
             </Link>
           </div>
         </div>
-        <div
-          className="min-h-[380px] lg:min-h-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              'url(/photos/team.jpg), linear-gradient(135deg, #50260E 0%, #C4956A 100%)',
-            backgroundPosition: 'center bottom',
-          }}
-        />
+        <div className="overflow-hidden">
+          <Image
+            src="/photos/team.jpg"
+            alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
+            width={1200}
+            height={500}
+            style={{ width: '100%', height: 'auto', display: 'block' }}
+          />
+        </div>
       </section>
 
       {/* MISSION & VISION */}
