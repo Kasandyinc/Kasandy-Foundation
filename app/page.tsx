@@ -358,8 +358,8 @@ export default function HomePage() {
             <Image
               src="/photos/team.jpg"
               alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
-              width={1200}
-              height={500}
+              width={2400}
+              height={1360}
               style={{ width: '100%', height: 'auto', display: 'block' }}
             />
           </div>
