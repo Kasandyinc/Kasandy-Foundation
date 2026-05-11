@@ -97,10 +97,10 @@ export default function AboutPage() {
         </div>
         <div className="overflow-hidden">
           <Image
-            src="/photos/team.jpg"
+            src="/photos/team_cropped.jpg"
             alt="Kasandy Foundation team: Deress Asghedom, Jackee Kasandy, Nadine Umutoni, Raphael Malachi"
             width={1200}
-            height={500}
+            height={350}
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
         </div>
