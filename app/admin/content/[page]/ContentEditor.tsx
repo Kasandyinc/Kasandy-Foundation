@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import type { EditablePage } from '@/lib/page-content'
+import RichTextEditor from '@/components/admin/RichTextEditor'
 import { Save, RotateCcw, ExternalLink, ChevronLeft, Loader2, CheckCircle2 } from 'lucide-react'
 
 export default function ContentEditor({
@@ -22,6 +23,10 @@ export default function ContentEditor({
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
+
+  function set(key: string, val: string) {
+    setValues(prev => ({ ...prev, [key]: val }))
+  }
 
   function reset(key: string) {
     setValues(prev => ({ ...prev, [key]: '' }))
@@ -49,14 +54,14 @@ export default function ContentEditor({
       setSaved(true)
       setTimeout(() => setSaved(false), 3000)
     } else {
-      setError('Save failed. Check your KV connection.')
+      setError('Save failed. Check that Vercel KV is connected to this project.')
     }
   }
 
   return (
     <div>
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between gap-4">
+      <div className="mb-6 flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
           <Link href="/admin/content" className="text-gray-400 hover:text-gray-700 transition-colors">
             <ChevronLeft size={20} />
@@ -66,7 +71,7 @@ export default function ContentEditor({
             <p className="text-sm text-gray-500 mt-0.5">{pageDef.description}</p>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 shrink-0">
           <a
             href={pageDef.url}
             target="_blank"
@@ -100,23 +105,28 @@ export default function ContentEditor({
 
       <div className="bg-white rounded-lg border border-gray-200">
         <div className="px-6 py-3 bg-gray-50 border-b border-gray-200 text-xs text-gray-500">
-          Leave a field blank to use the hardcoded default. Saved values override the default immediately.
+          Leave a field blank to use the hardcoded default. Drag &amp; drop images directly into text editors.
         </div>
         <div className="divide-y divide-gray-100">
           {pageDef.blocks.map(block => {
             const currentValue = values[block.key] ?? ''
-            const isOverridden = currentValue.trim().length > 0
+            // A rich text field is "overridden" if it has real HTML content (not just empty tags)
+            const isOverridden = block.type === 'textarea'
+              ? currentValue.replace(/<[^>]*>/g, '').trim().length > 0
+              : currentValue.trim().length > 0
+
             return (
-              <div key={block.key} className="px-6 py-5">
-                <div className="flex items-start justify-between gap-4 mb-2">
+              <div key={block.key} className="px-6 py-6">
+                {/* Label row */}
+                <div className="flex items-start justify-between gap-4 mb-3">
                   <div>
-                    <label className="text-sm font-medium text-gray-800">{block.label}</label>
+                    <label className="text-sm font-semibold text-gray-800">{block.label}</label>
                     {block.hint && <p className="text-xs text-gray-400 mt-0.5">{block.hint}</p>}
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
                     {isOverridden && (
                       <span className="text-[10px] bg-green-50 text-green-700 border border-green-100 px-2 py-0.5 rounded-full font-medium">
-                        Overridden
+                        Custom
                       </span>
                     )}
                     {isOverridden && (
@@ -124,41 +134,52 @@ export default function ContentEditor({
                         onClick={() => reset(block.key)}
                         className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
                       >
-                        Reset
+                        Reset to default
                       </button>
                     )}
                   </div>
                 </div>
 
+                {/* Input */}
                 {block.type === 'textarea' ? (
-                  <textarea
+                  <RichTextEditor
                     value={currentValue}
-                    onChange={e => setValues(prev => ({ ...prev, [block.key]: e.target.value }))}
-                    rows={3}
+                    onChange={val => set(block.key, val)}
                     placeholder={block.defaultValue}
-                    className="w-full text-sm border border-gray-200 rounded px-3 py-2 text-gray-900 placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-[#C0392B] resize-y"
+                  />
+                ) : block.type === 'number' ? (
+                  <input
+                    type="number"
+                    value={currentValue}
+                    onChange={e => set(block.key, e.target.value)}
+                    placeholder={block.defaultValue}
+                    className="w-32 text-sm border border-gray-200 rounded px-3 py-2 text-gray-900 placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-[#C0392B]"
                   />
                 ) : (
                   <input
-                    type={block.type === 'number' ? 'number' : 'text'}
+                    type="text"
                     value={currentValue}
-                    onChange={e => setValues(prev => ({ ...prev, [block.key]: e.target.value }))}
+                    onChange={e => set(block.key, e.target.value)}
                     placeholder={block.defaultValue}
                     className="w-full text-sm border border-gray-200 rounded px-3 py-2 text-gray-900 placeholder-gray-300 focus:outline-none focus:ring-1 focus:ring-[#C0392B]"
                   />
                 )}
 
-                <p className="text-[11px] text-gray-400 mt-1.5">
-                  Default: <span className="italic text-gray-400">{block.defaultValue.slice(0, 120)}{block.defaultValue.length > 120 ? '…' : ''}</span>
-                </p>
+                {/* Default preview */}
+                {block.type !== 'textarea' && (
+                  <p className="text-[11px] text-gray-400 mt-1.5">
+                    Default: <span className="italic">{block.defaultValue.slice(0, 100)}{block.defaultValue.length > 100 ? '…' : ''}</span>
+                  </p>
+                )}
               </div>
             )
           })}
         </div>
       </div>
 
-      {/* Bottom save bar */}
-      <div className="mt-6 flex justify-end gap-3">
+      {/* Bottom save */}
+      <div className="mt-6 flex justify-between items-center">
+        <p className="text-xs text-gray-400">Changes are saved to Vercel KV and apply immediately on the live site.</p>
         <button
           onClick={handleSave}
           disabled={saving}
