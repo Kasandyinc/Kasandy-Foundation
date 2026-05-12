@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import { Montserrat, DM_Sans, Great_Vibes } from 'next/font/google'
-import { headers } from 'next/headers'
 import './globals.css'
-import Nav from '@/components/Nav'
-import Footer from '@/components/Footer'
-import MissionBar from '@/components/MissionBar'
+import SiteShell from '@/components/SiteShell'
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -56,16 +53,10 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = headers().get('x-pathname') || ''
-  const isAdmin = pathname.startsWith('/admin')
-
   return (
     <html lang="en-CA" className={`${montserrat.variable} ${dmSans.variable} ${greatVibes.variable}`}>
       <body className="antialiased">
-        {!isAdmin && <Nav />}
-        {!isAdmin && <MissionBar />}
-        {isAdmin ? children : <main>{children}</main>}
-        {!isAdmin && <Footer />}
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   )
