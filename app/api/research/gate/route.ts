@@ -1,5 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server'
 import jwt from 'jsonwebtoken'
+import { appendSubmission, KV_KEYS } from '@/lib/admin-kv'
+import type { ResearchDownload } from '@/lib/admin-kv'
+
+const DOC_TITLES: Record<string, string> = {
+  'KCEI_Research_01_Acoustic_Brick': 'Acoustic Brick Research',
+  'KCEI_Research_02_Inclusive_Green_Economy': 'Inclusive Green Economy',
+  'KCEI_Research_03_Insulation_Feasibility': 'Insulation Feasibility',
+  'KCEI_Research_04_Midline_Activity_Report': 'Midline Activity Report',
+  'KCEI_Research_05_Canada_Kenya_Textile_Pipeline': 'Canada–Kenya Textile Pipeline',
+  'KCEI_Research_06_Circular_Economy_Employment_Models': 'Circular Economy Employment Models',
+}
+
 const ALLOWED_IDS = [
   'KCEI_Research_01_Acoustic_Brick',
   'KCEI_Research_02_Inclusive_Green_Economy',
@@ -30,6 +42,17 @@ export async function POST(req: NextRequest) {
     secret,
     { expiresIn: '15m' }
   )
+
+  // Save to KV for admin inbox
+  const entry: ResearchDownload = {
+    id: crypto.randomUUID(),
+    email,
+    docId: documentId,
+    docTitle: DOC_TITLES[documentId] ?? documentId,
+    refId,
+    createdAt: new Date().toISOString(),
+  }
+  await appendSubmission(KV_KEYS.researchDownloads, entry)
 
   // Send notification email if Resend is configured
   const resendKey = process.env.RESEND_API_KEY

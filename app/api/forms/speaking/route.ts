@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { appendSubmission, KV_KEYS } from '@/lib/admin-kv'
+import type { SpeakingSubmission } from '@/lib/admin-kv'
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
@@ -11,6 +13,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Valid email required.' }, { status: 400 })
   }
 
+  // Save to KV for admin inbox
+  const entry: SpeakingSubmission = {
+    id: crypto.randomUUID(),
+    name,
+    email,
+    org: organization || '—',
+    eventName,
+    eventDate: eventDate || undefined,
+    location: undefined,
+    audienceSize: audience || undefined,
+    notes: brief || undefined,
+    createdAt: new Date().toISOString(),
+  }
+  await appendSubmission(KV_KEYS.speakingSubmissions, entry)
+
+  // Send email notification
   const resendKey = process.env.RESEND_API_KEY
   if (resendKey) {
     try {

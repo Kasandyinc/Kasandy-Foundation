@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { appendSubmission, KV_KEYS } from '@/lib/admin-kv'
+import type { MediaSubmission } from '@/lib/admin-kv'
 
 export async function POST(req: NextRequest) {
   const body = await req.json()
@@ -11,6 +13,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Valid email required.' }, { status: 400 })
   }
 
+  // Save to KV for admin inbox
+  const entry: MediaSubmission = {
+    id: crypto.randomUUID(),
+    name,
+    email,
+    outlet: outlet || organization || '—',
+    story,
+    deadline: deadline || undefined,
+    createdAt: new Date().toISOString(),
+  }
+  await appendSubmission(KV_KEYS.mediaSubmissions, entry)
+
+  // Send email notification
   const resendKey = process.env.RESEND_API_KEY
   if (resendKey) {
     try {
