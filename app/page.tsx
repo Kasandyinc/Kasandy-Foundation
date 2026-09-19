@@ -136,7 +136,7 @@ export default function HomePage() {
           <h1 className="font-montserrat font-black text-4xl md:text-[52px] leading-[1.05] text-white mb-5 max-w-[680px]">
             We turn textile waste<br />into jobs and products.
           </h1>
-          <p className="text-[15px] text-white/88 leading-[1.75] max-w-[560px] mb-6">
+          <p className="text-[15px] text-white leading-[1.75] max-w-[560px] mb-6">
             Canada&apos;s first full-stack textile circular economy hub. We collect post-consumer textiles from BC residents and businesses, shred and process them into acoustic bricks, playground surfaces, park furnishings, and more — creating inclusive employment for refugees, newcomers, and people with disabilities along the way.
           </p>
           <div className="flex flex-wrap gap-3 mb-8">
