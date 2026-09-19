@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'The Kasandy Foundation — Nothing and No One Is Wasted',
-}f
+}
 
 const products = [
   {
