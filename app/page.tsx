@@ -245,7 +245,7 @@ export default function HomePage() {
           </p>
           <div className="grid grid-cols-2 gap-3 mb-6">
             {targets.map(t => (
-              <div key={t.label} className="bg-white/7 border border-white/10 rounded-lg p-4 text-center border-t-2 border-t-brown-soft">
+              <div key={t.label} className="bg-white/[0.07] border border-white/10 rounded-lg p-4 text-center border-t-2 border-t-brown-soft">
                 <div className="font-montserrat text-[28px] font-black text-brown-soft">{t.value}</div>
                 <div className="font-montserrat text-[9px] text-white/55 uppercase tracking-wide mt-1">{t.label}</div>
                 <div className="font-montserrat text-[8px] text-kf-red font-bold uppercase tracking-wide mt-1">2026–2028 Target</div>
