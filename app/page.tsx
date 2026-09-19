@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'The Kasandy Foundation — Nothing and No One Is Wasted',
-}
+}f
 
 const products = [
   {
@@ -152,7 +152,7 @@ export default function HomePage() {
           </div>
           <div className="flex flex-wrap gap-2">
             {['City of Vancouver Endorsed', 'ECUAD Research MOU', 'FFBC & SBCCI Funded', 'Active since July 2024'].map(badge => (
-              <span key={badge} className="bg-white/12 border border-white/20 text-white font-montserrat text-[10px] font-semibold px-3 py-1 rounded">
+              <span key={badge} className="bg-white/[0.12] border border-white/20 text-white font-montserrat text-[10px] font-semibold px-3 py-1 rounded">
                 ✓ {badge}
               </span>
             ))}
